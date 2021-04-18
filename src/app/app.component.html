@@ -1,4 +1,6 @@
-<app-header></app-header>
+<app-header>
+  <p>Test para</p>
+</app-header>
 
 <h1>
   Welcome to Angular...
@@ -24,6 +26,22 @@
 <div>
   2 way binding
   <input type="text" [(ngModel)]="name" /> <span>Count: {{name.length}}</span>
+</div>
+
+
+
+<div>
+  Parent-child relationship
+  <app-child [pdata]="data1" (onDataReceive)="onDataReceived($event)"></app-child>
+  <div>
+    <br />
+    App component: Received from Child : {{fromChild}}
+  </div>
+</div>
+
+<div>
+  Reactive driven forms:
+  <app-signup></app-signup>
 </div>
 
 <router-outlet></router-outlet>

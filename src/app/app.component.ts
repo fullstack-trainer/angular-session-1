@@ -12,6 +12,8 @@ export class AppComponent {
   showVal = true;
   charCount = 0;
   name = '123';
+  data1 = "Hello from parent";
+  fromChild = ''
 
   incrCounter() {
     this.counter++;
@@ -23,8 +25,12 @@ export class AppComponent {
   }
 
   performCharCount(event: Event) {
-    const val = (<HTMLInputElement> event.target).value;
+    const val = (<HTMLInputElement>event.target).value;
     this.charCount = val.length;
+  }
+
+  onDataReceived(data: any) {
+    this.fromChild = data;
   }
 
 
