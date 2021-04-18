@@ -1,0 +1,29 @@
+<app-header></app-header>
+
+<h1>
+  Welcome to Angular...
+  <span class="cls1">{{title}}</span>,
+  <span>{{title}}</span>,
+  <span>{{title}}</span>,
+  <span [style.color]="counter%2==0?'blue':'red'">
+    counter: {{counter}}
+  </span>,
+</h1>
+
+<input type="button" value="Click Me" (click)="incrCounter()" />
+
+<div [style.display]="showVal ? 'block':'none'">Am visible</div>
+<input [value]="toggleVal" type="button" (click)="onClickToggle()" />
+
+
+<div>
+  Reading a value from text box:
+  <input type="text" (input)="performCharCount($event)" /> <span>Count: {{charCount}}</span>
+</div>
+
+<div>
+  2 way binding
+  <input type="text" [(ngModel)]="name" /> <span>Count: {{name.length}}</span>
+</div>
+
+<router-outlet></router-outlet>
